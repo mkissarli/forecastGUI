@@ -1,0 +1,28 @@
+<template>
+<div class="dash">
+  <h2>{{ title }}</h2>
+  <h3>{{ temp }}</h3>
+  <h3>{{ time }}</h3>
+  <p>{{ apiResult }}</p>
+</div>
+</template>
+
+<script>
+export default {
+  name: "Dashboard",
+  props: {
+    title: String,
+    temp: Number,
+    time: String,
+  }
+  computed: {
+    apiResult: function () {
+      return this.$store.getters.getStoredApiResult;
+    }
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>
