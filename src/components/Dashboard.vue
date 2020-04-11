@@ -8,19 +8,23 @@
 	       v-bind:key="day.date"
 	       v-bind:weatherInfo="day">
       </oneUnit>
+      
     </div>
   </div>
+  <forecast></forecast>
 </div>
 </template>
 
 <script>
   import moment from "moment";
-  import OneUnit from "@/components/OneUnit.vue";
+import OneUnit from "@/components/OneUnit.vue";
+import Forecast from "@/components/Forecast.vue";
 
 export default {
   name: "Dashboard",
   components: {
-    OneUnit
+    OneUnit,
+    Forecast
   },
   props: {
     title: String,
@@ -49,28 +53,31 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #futureWeather {
-  display:flex;
+      display:flex;
   }
   .container {
-  display: flex;
-  justify-content: center;
+      display: flex;
+      justify-content: center;
   }
   #location {
-  text-align: right;
-  margin-right: 128px;
-  margin-top: 32px;
-  margin-bottom: 4px;
-  font-size: 48px;
-  color: #4d4d4d;
+      text-align: right;
+      margin-right: 128px;
+      margin-top: 32px;
+      margin-bottom: 4px;
+      font-size: 48px;
+      color: #4d4d4d;
   }
   #time {
-  text-align: right;
-  margin-right: 148px;
-  margin-bottom:8px;
-  font-size: 32px;
-  color: #999999;
+      text-align: right;
+      margin-right: 148px;
+      margin-bottom:8px;
+      font-size: 32px;
+      color: #999999;
   }
   #dash {
-  width: 720px;
+      width: 720px;
+      border-radius: 25px;
+      background-color: #c2c5d6;
+      padding: 36px;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-<div class="singleUnit">
+<div class="singleUnit" @click="setForecast">
   <h3 class="day">{{ getDate.format("ddd") }}</h3>
   <img :src=getImageUrl
        :alt=weatherInfo.day.condition.text>
@@ -25,6 +25,9 @@ export default {
     }
   },
   methods: {
+    setForecast: function() {
+      this.$store.dispatch("setCurrentForecast", this.weatherInfo);
+    }
   },
   beforeMount(){
   }
