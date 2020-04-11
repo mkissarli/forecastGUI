@@ -18,10 +18,11 @@ export default new Vuex.Store({
     async NEW_API_RESULT(state){
       var result;
       await api
-	.call().get("/current.json?q=Lancaster,UK&key="+process.env.VUE_APP_API_ID)
+	.call().get("/forecast.json?q=Lancaster,UK&days=5&key="+process.env.VUE_APP_API_ID)
 	.then(function (response) {
 	  console.log(response);
 	  result = response.data;
+	  console.log(result.forecast.forecastday);
 	})
 	.catch(function (error) {
 	  console.log(error);
