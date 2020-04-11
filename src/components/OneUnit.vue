@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="singleUnit">
   <h3>{{ getDate.format("ddd") }}</h3>
   <img :src=getImageUrl
        :alt=weatherInfo.day.condition.text>
@@ -34,4 +34,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .singleUnit {
+  margin: 24px
+  }
 </style>

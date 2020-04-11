@@ -2,13 +2,14 @@
 <div class="dash">
   <h3>{{ getApiResult.location.name }}</h3>
   <h3>{{ time }}</h3>
-  <div>
-    <oneUnit v-for="day in getApiResult.forecast.forecastday"
-	     v-bind:key="day.date"
-	     v-bind:weatherInfo="day">
-    </oneUnit>
+  <div class="container">
+    <div id="futureWeather">
+      <oneUnit v-for="day in getApiResult.forecast.forecastday"
+	       v-bind:key="day.date"
+	       v-bind:weatherInfo="day">
+      </oneUnit>
+    </div>
   </div>
-  
 </div>
 </template>
 
@@ -43,4 +44,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  #futureWeather {
+  display:flex;
+  }
+  .container {
+  display: flex;
+  justify-content: center;
+  }
 </style>
