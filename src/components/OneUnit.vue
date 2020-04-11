@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h3>{{ getDate.format("dddd") }}</h3>
+  <h3>{{ getDate.format("ddd") }}</h3>
   <img :src=weatherInfo.day.condition.icon.slice(2)
        :alt=weatherInfo.day.condition.text>
   <h3>{{ weatherInfo.day.maxtemp_c }} C max</h3>
