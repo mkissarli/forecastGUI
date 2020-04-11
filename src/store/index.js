@@ -7,11 +7,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    apiResult: null
+    apiResult: null,
+    currentForecast: null,
   },
   getters: {
     getStoredApiResult: state => {
       return state.apiResult;
+    },
+    getCurrentForecast: state => {
+      return state.currentForecast;
     }
   },
   mutations: {
@@ -31,11 +35,18 @@ export default new Vuex.Store({
 	  // always executed
 	});
       state.apiResult = result;
+    },
+
+    async SET_CURRENT_FORECAST(state, forecast){
+      state.currentForecast = forecast;
     }
   },
   actions: {
     newApiResult(context){
       context.commit("NEW_API_RESULT");
+    },
+    setCurrentForecast(context, forecast){
+      context.commit("SET_CURRENT_FORECAST", forecast);
     }
   },
   modules: {
