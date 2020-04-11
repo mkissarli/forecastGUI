@@ -17,4 +17,8 @@ export default {
 </script>
 
 <style>
+  .home{
+  display: flex;
+  justify-content: center;
+  }
 </style>

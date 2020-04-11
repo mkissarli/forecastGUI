@@ -1,7 +1,7 @@
 <template>
-<div class="dash">
+<div id="dash">
   <h3 id="location">{{ getApiResult.location.name }}</h3>
-  <h3>{{ time }}</h3>
+  <h3 id="time">{{ getTime }}</h3>
   <div class="container">
     <div id="futureWeather">
       <oneUnit v-for="day in getApiResult.forecast.forecastday"
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+  import moment from "moment";
   import OneUnit from "@/components/OneUnit.vue";
 
 export default {
@@ -29,6 +30,9 @@ export default {
   computed: {
     getApiResult: function () {
       return this.$store.getters.getStoredApiResult;
+    },
+    getTime: function (){
+      return moment().format("ddd Do MMM HH:mm");
     }
   },
   methods: {
@@ -55,8 +59,18 @@ export default {
   text-align: right;
   margin-right: 128px;
   margin-top: 32px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-size: 48px;
   color: #4d4d4d;
+  }
+  #time {
+  text-align: right;
+  margin-right: 148px;
+  margin-bottom:8px;
+  font-size: 32px;
+  color: #999999;
+  }
+  #dash {
+  width: 720px;
   }
 </style>
