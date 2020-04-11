@@ -1,7 +1,7 @@
 <template>
 <div>
   <h3>{{ getDate.format("ddd") }}</h3>
-  <img :src=weatherInfo.day.condition.icon.slice(2)
+  <img :src=getImageUrl
        :alt=weatherInfo.day.condition.text>
   <h3>{{ weatherInfo.day.maxtemp_c }} C max</h3>
   <h3>{{ weatherInfo.day.mintemp_c}} C min</h3>
@@ -20,6 +20,9 @@ export default {
   computed: {
     getDate: function () {
      return moment(this.weatherInfo.date.split("-"));
+    },
+    getImageUrl: function () {
+      return "http:".concat(this.weatherInfo.day.condition.icon);
     }
   },
   methods: {
