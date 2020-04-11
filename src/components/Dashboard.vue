@@ -8,8 +8,7 @@
 	     v-bind:weatherInfo="day">
     </oneUnit>
   </div>
-  <p>{{ getApiResult }}</p>
-  <button @click="loadData">Get</button>
+  
 </div>
 </template>
 
@@ -32,9 +31,9 @@ export default {
     }
   },
   methods: {
-    loadData: async function (){
-      await this.$store.dispatch("newApiResult");
-    }
+    //loadData: async function (){
+    //  await this.$store.dispatch("newApiResult");
+    //}
   },
   beforeMount(){
     this.$store.dispatch("newApiResult");
