@@ -1,6 +1,6 @@
 <template>
 <div class="dash">
-  <h3>{{ getApiResult.location.name }}</h3>
+  <h3 id="location">{{ getApiResult.location.name }}</h3>
   <h3>{{ time }}</h3>
   <div class="container">
     <div id="futureWeather">
@@ -50,5 +50,13 @@ export default {
   .container {
   display: flex;
   justify-content: center;
+  }
+  #location {
+  text-align: right;
+  margin-right: 128px;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  font-size: 48px;
+  color: #4d4d4d;
   }
 </style>

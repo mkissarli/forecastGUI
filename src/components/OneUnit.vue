@@ -1,11 +1,10 @@
 <template>
 <div class="singleUnit">
-  <h3>{{ getDate.format("ddd") }}</h3>
+  <h3 class="day">{{ getDate.format("ddd") }}</h3>
   <img :src=getImageUrl
        :alt=weatherInfo.day.condition.text>
-  <h3>{{ weatherInfo.day.maxtemp_c }} C max</h3>
-  <h3>{{ weatherInfo.day.mintemp_c}} C min</h3>
-  <h3>UV: {{ weatherInfo.uv }}</h3>
+  <h3 class="maxTemp">{{ weatherInfo.day.maxtemp_c }} C</h3>
+  <h3 class="minTemp">{{ weatherInfo.day.mintemp_c}} C</h3>
 </div>
 </template>
 
@@ -36,5 +35,21 @@ export default {
 <style scoped>
   .singleUnit {
   margin: 24px
+  }
+  .day {
+  font-weight: italic;
+  font-size:14px;
+  color: #4d4d4d;
+  }
+  .maxTemp{
+  font-weight: bold;
+  font-size:20px;
+  text-align: right;
+  color: #4d4d4d;
+  }
+  .minTemp{
+  font-size:14px;
+  text-align:right;
+  color: #999999;
   }
 </style>
