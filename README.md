@@ -1,4 +1,11 @@
-# weather_app
+# Weather Forecast Widget
+
+Simple Weather App that uses the [weatherapi](https://weatherapi.com) to load 
+and display a weather forcasting widget.
+
+Made as an exercise to learn VueJs and Vuex.
+
+![Demo of the widget](readme_resources/demo.gif)
 
 ## Project setup
 ```

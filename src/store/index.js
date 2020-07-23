@@ -24,8 +24,8 @@ export default new Vuex.Store({
       await api
         .call()
         .get(
-          "/forecast.json?q=Lancaster,UK&days=5&key=" +
-            process.env.VUE_APP_API_ID
+          "/forecast.json?q=Watford,UK&days=5&key=" +
+          process.env.VUE_APP_API_ID
         )
         .then(function(response) {
           console.log(response);
